@@ -1,0 +1,67 @@
+.swiper-container {
+	@include vw-calc(margin-left, -80, 320);
+	@include vw-calc(margin-right, -80, 320);
+	@include media ('>=480px') {
+		@include vw-calc(margin-left, -82, 540);
+		@include vw-calc(margin-right, -82, 540);
+	}
+	@include media ('>=phone') {
+		@include vw-calc(margin-left, -82, 760);
+		@include vw-calc(margin-right, -82, 760);
+	}
+	@include media ('>=tablet') {
+		margin: 0;
+	}
+	@include media ('>=desktop') {
+		margin: 0;
+	}
+	.swiper-wrapper {
+		.swiper-slide {
+			overflow: hidden;
+			text-align: center;
+			@include vw-calc(height, 240, 320);
+			@include media ('>=480px') {
+				@include vw-calc(height, 352, 540);
+			}
+			@include media ('>=phone') {
+				@include vw-calc(height, 462, 760);
+			}
+			@include media ('>=tablet') {
+				@include vw-calc(height, 495, 991);
+			}
+			@include media ('>=desktop') {
+				@include vw-calc(height, 500, 1500);
+			}
+			@include media ('>=widescreen') {
+				@include vw-calc(height, 634, 1903);
+			}
+			img {
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		background-color: rgba($gray-900, 0.5);
+		width: 40px;
+		height: 40px;
+		background-size: 10px auto;
+		border-radius: 100%;
+		@include animate(background-color);
+		@include media ('<tablet') {
+			display: none;
+		}
+		&:hover {
+			background-color: rgba($gray-900, 0.8);
+		}
+		&.swiper-button-disabled {
+			opacity: 0;
+		}
+	}
+}

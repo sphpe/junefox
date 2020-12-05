@@ -1,0 +1,7 @@
+export default {
+    MIN_PWD_LENGTH: 6,
+    MAX_PWD_LENGTH: 20,
+    MIN_NAME_LENGTH: 2,
+    MAX_NAME_LENGTH: 20,    
+    MAX_WEBSITE_LENGTH: 100
+}

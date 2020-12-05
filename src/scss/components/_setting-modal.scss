@@ -1,0 +1,253 @@
+.modal-dialog {
+	max-width: none;
+	width: auto;
+	justify-content: center;
+	&:not(.modal-dialog-centered) {
+		display: flex;
+	}
+}
+
+.setting-lightbox {
+	width: 96%;
+	padding: 0;
+	overflow: hidden;
+	border-radius: 12px;
+	@include media ('>=tablet') {
+		width: 400px;
+	}
+	&.inner {
+		@include media ('>=tablet') {
+			width: 600px;
+		}
+		@include media ('>=desktop') {
+			width: 850px;
+		}
+	}
+}
+
+.setting-elements {
+	@extend %listreset;
+	li {
+		@include font-size(14, 18);
+		text-align: center;
+		cursor: pointer;
+		padding: 16px 10px;
+		color: inherit;
+		@include animate(background);
+		&:hover {
+			background: darken($white, 5%);
+		}
+		&+li {
+			border-top: 1px solid #efefef;
+		}
+	}
+}
+
+// file upload modal
+.upload-lightbox {
+	width: 96%;
+	padding: 0;
+	overflow: hidden;
+	background: #e8e9ec;
+	border-color: #e8e9ec;
+	border-radius: 12px;
+	@include media ('>=tablet') {
+		width: 600px;
+	}
+	@include media ('>=desktop') {
+		width: 850px;
+	}
+	.close {
+		position: absolute;
+		top: 4px;
+		right: 12px;
+		z-index: 1;
+		@include media ('>=tablet') {
+			top: 2px;
+			font-size: 31px;
+		}
+	}
+	.row {
+		margin-left: -14px;
+		margin-right: -14px;
+	}
+
+	&.event {
+		background: $white;
+		border-color: $white;
+		// min-height: 300px;
+	}
+}
+
+// login model
+.login-lightbox {
+	width: 96%;
+	@include media ('>=phone') {
+		width: 425px;
+	}
+	.close {
+		position: absolute;
+		top: 4px;
+		right: 12px;
+		z-index: 1;
+		@include media ('>=tablet') {
+			top: 2px;
+			font-size: 31px;
+		}
+	}
+	.login-box {
+		// width: 100%;
+		// border-radius: 10px;
+		.column {
+			width: 100%;
+		}
+		.right-column {
+			.sign-info {
+				// width: 100%;
+			}
+		}
+		.login-form {
+			width: 100%;
+		}
+	}
+}
+
+.flatpickr-day {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.file-uploader {
+	padding: 10px;
+	@include media ('>=tablet') {
+		padding: 20px;
+	}
+
+	.or {
+		display: block;
+		padding: 10px 40px;
+	}
+	.link-import {
+		display: block;
+		a {
+			background: lighten($gray-300, 8%);
+			padding: 6px 12px;
+			display: flex;
+			align-items: center;
+			border-radius: 3px;
+			@include font-size(18, 22);
+			color: #333;
+			@include animate(background);
+			@include media ('>=phone') {
+				display: inline-flex;
+				vertical-align: top;
+			}
+			&:hover {
+				background: lighten($gray-300, 3%);
+			}
+			.text {
+				padding-bottom: 3px;
+			}
+			.social-logo {
+				margin-left: 6px;
+			}
+			img {display: block;}
+		}
+	}
+
+	h2 {
+		margin-bottom: 20px;
+	}
+	.btn {
+		@include font-size(16, 20);
+		padding: 3px 12px 7px;
+		@include media ('<phone') {
+			width: 100%;
+			display: block;
+		}
+		&.btn-record {
+			display: inline-flex;
+			vertical-align: top;
+			align-items: center;
+			justify-content: center;
+			@include media ('<phone') {
+				display: flex;
+			}
+			&:before {
+				content: '';
+				width: 9px;
+				height: 9px;
+				background: $white;
+				border-radius: 100%;
+				margin: 3px 7px 0 0;
+			}
+		}
+	}
+}
+
+.dropzone {
+	margin-bottom: 10px;
+	padding: 5px;
+	background: $white;
+	border: 2px dashed #0087f7;
+	border-radius: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	.dz-message {
+		@include font-size(20, 24);
+		color: #3453da;
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+#profileModal>.modal-dialog>.modal-content{	
+	width: 400px;
+	margin-top: 50vh;
+	transform: translateY(-50%);
+}
+
+#profileModal>.modal-dialog>.modal-content>.modal-content{	
+	position: fixed;
+  	width: 800px;
+  	left: -200px;
+  	top: -80px;
+  	padding: 38px;
+}
+
+.errorMsg{
+	padding-top: 10px;
+	color: red;
+}
+
+.modal-header {
+    background: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding: 5px 20px;
+    text-align: right;
+    h3 {
+        color: white;
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.modal-body {
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.modal-footer {
+    background: #fff;
+    height: 35px;
+    padding: 15px;
+}
+
+.content-block.explore{
+    height: 100vh;
+}

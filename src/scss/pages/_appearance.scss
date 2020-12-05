@@ -1,0 +1,433 @@
+.appearance-wrap {
+	background: $gray-200;
+	position: relative;
+	min-height: calc(100vh - 55px);
+	z-index: 1;
+	&.setting {
+		min-height: calc(100vh - 135px);
+	}
+	.user-holder {
+		background: $white;
+		padding: 13px 0;
+		position: relative;
+		// margin-bottom: 60px;
+		@include vw-calc(margin-bottom, 60, 320);
+		// @include media ('>=phone') {
+
+		// }
+		&:after {
+			content: '';
+			position: absolute;
+			@include vw-calc(bottom, -63, 320);
+			// bottom: -60px;
+			left: 50%;
+			transform: translateX(-50%);
+			@include vw-calc(width, 720, 320);
+			@include vw-calc(height, 720, 320);
+			// width: 576px;
+			// height: 576px;
+			box-shadow: 0 6px 0 rgba(148, 148, 148, 0.01), inset 0 -1px 1px rgba(0, 0, 0, 0.07);
+			background: $white;
+			border-radius: 100%;
+			z-index: -1;
+		}
+		.preview {
+			width: 90px;
+			height: 90px;
+			border-radius: 100%;
+			overflow: hidden;
+			margin: 0 auto 2px;
+			// @include media ('>=phone') {
+			// 	width: 215px;
+			// 	height: 215px;
+			// }
+		}
+		.name {
+			display: block;
+			@include font-size(19, 22);
+			font-weight: bold;
+			color: $black;
+			margin-bottom: 6px;
+			// @include media ('>=phone') {
+			// 	@include font-size(45, 48);
+			// }
+		}
+		.org {
+			display: block;
+			@include font-size(12, 16);
+			font-weight: bold;
+			text-transform: uppercase;
+			color: $black;
+			// @include media ('>=phone') {
+			// 	@include font-size(29, 32);
+			// }
+		}
+		.user-setting {
+			@extend %listreset;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			padding: 12px 0;
+			margin: 0 -30px;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				width: 2px;
+				height: 60px;
+				margin: auto;
+				background: #edeeef;
+				// @include media ('>=phone') {
+				// 	width: 3px;
+				// 	height: 141px;
+				// }
+			}
+			li {
+				padding: 5px 50px;
+			}
+			a {
+				color: #bcc4cf;
+				display: block;
+				@include animate(color);
+				&:hover {
+					color: darken(#bcc4cf, 20%);
+					.icon {
+						background: darken(#bcc4cf, 20%);
+						color: $white;
+					}
+				}
+			}
+			.icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 3px;
+				font-size: 20px;
+				line-height: 1;
+				color: #c3c8d0;
+				width: 50px;
+				height: 50px;
+				border-radius: 100%;
+				background: $gray-200;
+				box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+				@include animate(background color);
+				// @include media ('>=phone') {
+				// 	width: 120px;
+				// 	height: 120px;
+				// 	font-size: 50px;
+				// 	box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.06);
+				// }
+			}
+			.text {
+				display: block;
+				@include font-size(12, 16);
+				font-weight: bold;
+				text-transform: uppercase;
+				// @include media ('>=phone') {
+				// 	@include font-size(28, 32);
+				// }
+			}
+		}
+	}
+
+	.setting-section {
+		padding: 9px 0;
+	}
+
+	.other-setting {
+		padding: 10px 0 30px;
+		h2 {
+			@include font-size(13, 16);
+			font-weight: bold;
+			text-transform: uppercase;
+			color: $black;
+			@include make-container();
+			margin-bottom: 1px;
+			// @include media ('>=phone') {
+			// 	@include font-size(31, 34);
+			// }
+		}
+		h3 {
+			@include font-size(11, 14);
+			font-weight: 600;
+			text-transform: uppercase;
+			color: #6d6c72;
+			@include make-container();
+			margin-bottom: 6px;
+			// @include media ('>=phone') {
+			// 	@include font-size(26, 28);
+			// }
+		}
+		.setting-list {
+			@extend %listreset;
+			background: $white;
+			@include make-container();
+			&.language-list {
+
+			}
+			li {
+				padding: 9px 0;
+				@include font-size(13, 16);
+				font-weight: 600;
+				// @include media ('>=phone') {
+				// 	@include font-size(31, 34);
+				// }
+			}
+			&.add {
+				li {
+					padding: 7px 0;
+				}
+			}
+			&.language-list {
+				li {
+					padding: 4px 0;
+				}
+			}
+			.custom-control-label {
+				font-weight: bold;
+				.label-title {
+					display: block;
+					@include font-size(11, 14);
+					&.success {
+						color: #30bb82;
+					}
+					&.warning {
+						color: #f2bb60;
+					}
+					&.danger {
+						color: #db666e;
+					}
+				}
+				.label-description {
+					display: block;
+					@include font-size(9, 12);
+					font-weight: 600;
+					color: #a8a8aa;
+				}
+			}
+			.setting-option {
+				display: block;
+				color: #3c3b3f;
+				i {
+					color: #c3c8d0;
+					font-size: 1.38em;
+					line-height: 1;
+					margin-right: 9px;
+					@include media ('>=phone') {
+						// font-size: 18px;
+					}
+					&.icon-email {
+						font-size: 14px;
+					}
+					&.logo-safari {
+						width: 18px;
+					}
+				}
+			}
+			.language {
+				font-weight: 700;
+				.name {
+					display: block;
+					@include font-size(11, 14);
+					color: #3c3b3f;
+					margin-bottom: 2px;
+				}
+				.trans {
+					display: block;
+					@include font-size(9, 12);
+					color: #a8a8aa;
+				}
+			}
+			.setting-value {
+				color: #757575;
+				// letter-spacing: 0.3px;
+				&.check-value {
+					color: #3ed964;
+					font-size: 10px;
+					line-height: 1;
+					margin-right: 5px;
+					display: none;
+					&.checked {
+						display: block;
+					}
+				}
+			}
+			.progress {
+				margin: 12px 0 8px;
+			}
+		}
+		.note {
+			display: block;
+			@include font-size(11, 14);
+			font-weight: 600;
+			color: #a8a8aa;
+			&.add {
+				padding: 4px 14px 1px;
+			}
+		}
+	}
+}
+
+.app-info {
+	padding: 40px 9px 28px;
+	.info-swiper {
+		position: relative;
+		padding-bottom: 26px;
+		margin-bottom: 2px;
+		h2 {
+			@include font-size(15, 18);
+			font-weight: bold;
+			color: #383f45;
+			min-height: 23px;
+			margin-bottom: 2px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.icon-pin {
+				font-size: 23px;
+				line-height: 1;
+				color: #3390f9;
+				margin-right: 10px;
+			}
+		}
+		.text {
+			display: block;
+			@include font-size(14, 18);
+			font-weight: 600;
+			color: #383f45;
+			margin-bottom: 10px;
+		}
+		.swiper-pagination-bullet {
+			width: 5px;
+			height: 5px;
+			background: #dadfe6;
+			opacity: 1;
+			&.swiper-pagination-bullet-active {
+				background: #298cfa;
+			}
+		}
+		&.swiper-container-horizontal {
+			> .swiper-pagination-bullets {
+				.swiper-pagination-bullet {
+					margin: 0 1.5px;
+				}
+			}
+		}
+	}
+	.btn {
+		text-transform: uppercase;
+		min-width: 228px;
+		border: none;
+		border-radius: 73px;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.28);
+		&.btn-secondary {
+			background: $white;
+			color: #fd5068;
+			&:hover {
+				background: $gray-200;
+			}
+		}
+		&.btn-lg {
+			@include font-size(14, 18);
+			font-weight: 600;
+			padding: 12px 18px 16px;
+			letter-spacing: 1px;
+		}
+	}
+	.setting-item-list {
+		@extend %listreset;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 13px 2px;
+		margin-top: -23px;
+		li {
+			padding: 9px 4px;
+			width: 33.33%;
+			a {
+				color: #7d7d7d;
+				display: inline-flex;
+				vertical-align: top;
+				flex-direction: column;
+				align-items: center;
+				&:hover {
+					.item-icon {
+						background: #8190a4;
+						color: $white;
+					}
+				}
+				.item-icon {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 50px;
+					height: 50px;
+					font-size: 21px;
+					line-height: 1;
+					margin-bottom: 4px;
+					background: $white;
+					color: #c3c8d0;
+					border-radius: 100%;
+					box-shadow: inset 0 -1px 0 rgba($black, 0.06);
+					@include animate(background color);
+				}
+				.text {
+					@include font-size(9, 12);
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+
+.custom-control-label {
+	&:before {
+		width: 18px;
+		height: 18px;
+		background: none;
+		border: 1px solid #c3c8d0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&:after {
+		content: "\e902";
+		@include icomoon-style;
+		width: 18px;
+		height: 18px;
+		color: $white;
+		font-size: 8px;
+		line-height: 1;
+		// top: 6px;
+		// margin-top: -1px;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		opacity: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		// @include animate(opacity);
+	}
+}
+
+.custom-radio {
+	padding-left: 26px;
+	.custom-control-input {
+		&:checked {
+			~ .custom-control-label {
+				&:before {
+					background: #30bb82;
+					border-color: #30bb82;
+					// @include animate(background border-color);
+				}
+				&:after {
+					background: none;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

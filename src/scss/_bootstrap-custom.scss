@@ -1,0 +1,417 @@
+// custom variables and override bootstrap variables
+
+$white:  #fff;
+$gray-100: #fafafa;  //modified
+$gray-200: #f5f7fa;  //modified
+$gray-300: #dbdbdb;  //modified
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;  //modified
+$gray-700: #495057;
+$gray-800: #57595b;  //modified
+$gray-900: #212529;
+$black:  #000;
+
+$blue:    #458afe;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #ed4956;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #04fabc;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$colors: (
+	blue: $blue,
+	indigo: $indigo,
+	purple: $purple,
+	pink: $pink,
+	red: $red,
+	orange: $orange,
+	yellow: $yellow,
+	green: $green,
+	teal: $teal,
+	cyan: $cyan,
+	white: $white,
+	gray: $gray-600,
+	gray-dark: $gray-800
+);
+
+$theme-colors: (
+	primary: $blue,
+	secondary: $gray-100,
+	success: $green,
+	info: $cyan,
+	warning: $yellow,
+	danger: $red,
+	light: $gray-100,
+	dark: $gray-800
+);
+
+$spacer:   1rem;
+$spacers: (
+	0: 0,
+	1: ($spacer * .25),
+	2: ($spacer * .5),
+	3: $spacer,
+	4: ($spacer * 1.5),
+	5: ($spacer * 3),
+	6: ($spacer * 4.5),
+	7: ($spacer * 6),
+	8: ($spacer * 7.5),
+	9: ($spacer * 9),
+	10: ($spacer * 10.5)
+);
+
+$base-min-width: 320px;
+
+
+// $font-family-sans-serif:      Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-serif:       	  "Vijaya", serif;
+// $font-family-base:            $font-family-sans-serif;
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1540px
+);
+  // xl: 1540px
+
+// @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+// @include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 963px,
+  xl: 1263px
+);
+
+// @include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12;
+$grid-gutter-width:           28px;
+
+
+// This is the default html and body font-size for the base rem value.
+$rem-base: 16px;
+
+$body-bg:                   $gray-100;
+$body-color:                $gray-800;
+
+$link-hover-decoration:     none;
+
+$font-size-base: 1.03rem;
+$line-height-base:            1.21;
+
+// $h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                1.25rem;
+// $h3-font-size:                $font-size-base * 1.75;
+// $h4-font-size:                $font-size-base * 1.5;
+// $h5-font-size:                $font-size-base * 1.25;
+// $h6-font-size:                $font-size-base;
+
+// $headings-margin-bottom:      ($spacer / 2);
+// $headings-font-family:        inherit;
+// $headings-font-weight:        500;
+// $headings-line-height:        1.2;
+// $headings-color:              inherit;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+// $line-height-lg:              1.5;
+// $line-height-sm:              1.5;
+
+$border-width:                1px;
+// $border-color:                $gray-300;
+
+$border-radius:               0.19rem;
+// $border-radius-lg:            .3rem;
+// $border-radius-sm:            .2rem;
+
+// $component-active-color:      $white;
+// $component-active-bg:         theme-color("primary");
+
+// $caret-width:                 .3em;
+
+// $transition-base:             all .2s ease-in-out;
+// $transition-fade:             opacity .15s linear;
+// $transition-collapse:         height .35s ease;
+
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y:         0.25rem;
+$input-btn-padding-x:         .75rem;
+$input-btn-line-height:       1.13;
+
+$input-btn-focus-width:       $border-width;
+// $input-btn-focus-color:       rgba($component-active-bg, .25);
+$input-btn-focus-box-shadow:  none;
+
+// $input-btn-padding-y-sm:      .25rem;
+// $input-btn-padding-x-sm:      .5rem;
+// $input-btn-line-height-sm:    $line-height-sm;
+
+// $input-btn-padding-y-lg:      .5rem;
+// $input-btn-padding-x-lg:      1rem;
+// $input-btn-line-height-lg:    $line-height-lg;
+
+// $input-btn-border-width:      $border-width;
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+// $btn-padding-y:               $input-btn-padding-y;
+// $btn-padding-x:               $input-btn-padding-x;
+// $btn-line-height:             $input-btn-line-height;
+
+// $btn-padding-y-sm:            $input-btn-padding-y-sm;
+// $btn-padding-x-sm:            $input-btn-padding-x-sm;
+// $btn-line-height-sm:          $input-btn-line-height-sm;
+
+// $btn-padding-y-lg:            $input-btn-padding-y-lg;
+// $btn-padding-x-lg:            $input-btn-padding-x-lg;
+// $btn-line-height-lg:          $input-btn-line-height-lg;
+
+// $btn-border-width:            $input-btn-border-width;
+
+$btn-font-weight:             500;
+// $btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
+// $btn-focus-width:             $input-btn-focus-width;
+// $btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+$btn-disabled-opacity:        .3;
+// $btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125);
+
+// $btn-link-disabled-color:     $gray-600;
+
+// $btn-block-spacing-y:         .5rem;
+
+// Allows for customizing button radius independently from global border radius
+// $btn-border-radius:           $border-radius;
+// $btn-border-radius-lg:        $border-radius-lg;
+// $btn-border-radius-sm:        $border-radius-sm;
+
+// $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+
+// Forms
+
+// $input-padding-y:                       $input-btn-padding-y;
+// $input-padding-x:                       $input-btn-padding-x;
+// $input-line-height:                     $input-btn-line-height;
+
+// $input-padding-y-sm:                    $input-btn-padding-y-sm;
+// $input-padding-x-sm:                    $input-btn-padding-x-sm;
+// $input-line-height-sm:                  $input-btn-line-height-sm;
+
+// $input-padding-y-lg:                    $input-btn-padding-y-lg;
+// $input-padding-x-lg:                    $input-btn-padding-x-lg;
+// $input-line-height-lg:                  $input-btn-line-height-lg;
+
+$input-bg:                              $gray-100;
+// $input-disabled-bg:                     $gray-200;
+
+$input-color:                           #262626;
+$input-border-color:                    $gray-300;
+// $input-border-width:                    $input-btn-border-width;
+// $input-box-shadow:                      inset 0 1px 1px rgba($black, .075);
+
+// $input-border-radius:                   $border-radius;
+// $input-border-radius-lg:                $border-radius-lg;
+// $input-border-radius-sm:                $border-radius-sm;
+
+// $input-focus-bg:                        $input-bg;
+$input-focus-border-color:              darken($input-border-color, 10%);
+// $input-focus-color:                     $input-color;
+// $input-focus-width:                     $input-btn-focus-width;
+// $input-focus-box-shadow:                $input-btn-focus-box-shadow;
+
+// $input-placeholder-color:               $gray-600;
+
+// $input-height-border:                   $input-border-width * 2;
+
+// $input-height-inner:                    ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2);
+// $input-height:                          calc(#{$input-height-inner} + #{$input-height-border});
+
+// $input-height-inner-sm:                 ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2);
+// $input-height-sm:                       calc(#{$input-height-inner-sm} + #{$input-height-border});
+
+// $input-height-inner-lg:                 ($font-size-lg * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2);
+// $input-height-lg:                       calc(#{$input-height-inner-lg} + #{$input-height-border});
+
+// $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+// $form-text-margin-top:                  .25rem;
+
+// $form-check-input-gutter:               1.25rem;
+// $form-check-input-margin-y:             .3rem;
+// $form-check-input-margin-x:             .25rem;
+
+// $form-check-inline-margin-x:            .75rem;
+// $form-check-inline-input-margin-x:      .3125rem;
+
+// $form-group-margin-bottom:              1rem;
+
+// $input-group-addon-color:               $input-color;
+// $input-group-addon-bg:                  $gray-200;
+// $input-group-addon-border-color:        $input-border-color;
+
+// $custom-control-gutter:                 1.5rem;
+// $custom-control-spacer-x:               1rem;
+
+// $custom-control-indicator-size:         1rem;
+// $custom-control-indicator-bg:           $gray-300;
+// $custom-control-indicator-bg-size:      50% 50%;
+// $custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1);
+
+// $custom-control-indicator-disabled-bg:          $gray-200;
+// $custom-control-label-disabled-color:     $gray-600;
+
+// $custom-control-indicator-checked-color:        $component-active-color;
+// $custom-control-indicator-checked-bg:           $component-active-bg;
+// $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5);
+// $custom-control-indicator-checked-box-shadow:   none;
+
+// $custom-control-indicator-focus-box-shadow:     0 0 0 1px $body-bg, $input-btn-focus-box-shadow;
+
+// $custom-control-indicator-active-color:         $component-active-color;
+// $custom-control-indicator-active-bg:            lighten($component-active-bg, 35%);
+// $custom-control-indicator-active-box-shadow:    none;
+
+// $custom-checkbox-indicator-border-radius:       $border-radius;
+// $custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23");
+
+// $custom-checkbox-indicator-indeterminate-bg:    $component-active-bg;
+// $custom-checkbox-indicator-indeterminate-color: $custom-control-indicator-checked-color;
+// $custom-checkbox-indicator-icon-indeterminate:  str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23");
+// $custom-checkbox-indicator-indeterminate-box-shadow: none;
+
+// $custom-radio-indicator-border-radius:          50%;
+// $custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E"), "#", "%23");
+
+$custom-select-padding-y:           $input-btn-padding-y;
+$custom-select-padding-x:          $input-btn-padding-x;
+// $custom-select-height:              $input-height;
+// $custom-select-indicator-padding:   1rem; // Extra padding to account for the presence of the background-image based indicator
+// $custom-select-line-height:         $input-btn-line-height;
+$custom-select-color:               $input-color;
+// $custom-select-disabled-color:      $gray-600;
+$custom-select-bg:                  $input-bg;
+// $custom-select-disabled-bg:         $gray-200;
+// $custom-select-bg-size:             8px 10px; // In pixels because image dimensions
+// $custom-select-indicator-color:     $gray-800;
+// $custom-select-indicator:           str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23");
+// $custom-select-border-width:        $input-btn-border-width;
+$custom-select-border-color:        $input-border-color;
+// $custom-select-border-radius:       $border-radius;
+
+$custom-select-focus-border-color:  $input-focus-border-color;
+$custom-select-focus-box-shadow:    none;
+
+// $custom-select-font-size-sm:        75%;
+// $custom-select-height-sm:           $input-height-sm;
+
+// $custom-select-font-size-lg:        125%;
+// $custom-select-height-lg:           $input-height-lg;
+
+// $custom-file-height:                $input-height;
+// $custom-file-focus-border-color:    $input-focus-border-color;
+// $custom-file-focus-box-shadow:      $input-btn-focus-box-shadow;
+
+// $custom-file-padding-y:             $input-btn-padding-y;
+// $custom-file-padding-x:             $input-btn-padding-x;
+// $custom-file-line-height:           $input-btn-line-height;
+// $custom-file-color:                 $input-color;
+// $custom-file-bg:                    $input-bg;
+// $custom-file-border-width:          $input-btn-border-width;
+// $custom-file-border-color:          $input-border-color;
+// $custom-file-border-radius:         $input-border-radius;
+// $custom-file-box-shadow:            $input-box-shadow;
+// $custom-file-button-color:          $custom-file-color;
+// $custom-file-button-bg:             $input-group-addon-bg;
+// $custom-file-text: (
+//   en: "Browse"
+// ) !default;
+
+
+// Progress bars
+
+$progress-height:                   7px;
+// $progress-font-size:                ($font-size-base * .75) !default;
+$progress-bg:                       #c3c8d0;
+$progress-border-radius:            15px;
+$progress-box-shadow:               inset 0 1px 1px rgba(0, 0, 0, 0.1);
+// $progress-bar-color:                $white !default;
+$progress-bar-bg:                   #3ed964;
+// $progress-bar-animation-timing:     1s linear infinite !default;
+// $progress-bar-transition:           width .6s ease !default;
+
+
+// Modals
+
+// Padding applied to the modal body
+// $modal-inner-padding:         1rem;
+
+// $modal-dialog-margin:         .5rem;
+// $modal-dialog-margin-y-sm-up: 1.75rem;
+
+// $modal-title-line-height:           $line-height-base;
+
+$modal-content-bg:               $white;
+$modal-content-border-color:     $modal-content-bg;
+// $modal-content-border-width:     $border-width;
+// $modal-content-box-shadow-xs:    0 .25rem .5rem rgba($black, .5);
+// $modal-content-box-shadow-sm-up: 0 .5rem 1rem rgba($black, .5);
+
+// $modal-backdrop-bg:           $black;
+// $modal-backdrop-opacity:      .5;
+// $modal-header-border-color:   $gray-200;
+// $modal-footer-border-color:   $modal-header-border-color;
+// $modal-header-border-width:   $modal-content-border-width;
+// $modal-footer-border-width:   $modal-header-border-width;
+// $modal-header-padding:        1rem;
+
+// $modal-lg:                          800px;
+// $modal-md:                          500px;
+// $modal-sm:                          300px;
+
+// $modal-transition:                  transform .3s ease-out;
+
+
+// Tooltips
+
+// $tooltip-font-size:           $font-size-sm;
+// $tooltip-max-width:           200px;
+$tooltip-color:               $gray-300;
+$tooltip-bg:                  $gray-900;
+// $tooltip-border-radius:        $border-radius;
+// $tooltip-opacity:             .9;
+// $tooltip-padding-y:           .25rem;
+// $tooltip-padding-x:           .5rem;
+// $tooltip-margin:              0;
+
+// $tooltip-arrow-width:         .8rem;
+// $tooltip-arrow-height:        .4rem;
+// $tooltip-arrow-color:         $tooltip-bg;

@@ -1,0 +1,140 @@
+.app-wrap {
+	background: #fafafa;
+	height: calc(100vh - 93px);
+	.contact-block {
+		padding: 10px 14px;
+		overflow-y: auto;
+		flex-grow: 1;
+		position: relative;
+		.new-message {
+			position: fixed;
+			bottom: 86px;
+			right: 14px;
+			width: 50px;
+			height: 50px;
+			background: #0084ff;
+			box-shadow: 0 7px 8px rgba($black, 0.22);
+			border-radius: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $white;
+			font-size: 17px;
+			line-height: 1;
+			z-index: 9;
+		}
+	}
+	.contact-list {
+		@extend %listreset;
+		li {
+			display: flex;
+			align-items: center;
+			padding: 10px 0;
+			.avatar {
+				width: 43px;
+				height: 44px;
+				border-radius: 100%;
+				// overflow: hidden;
+				flex-grow: 0;
+				flex-shrink: 0;
+				position: relative;
+				margin-right: 15px;
+				img {
+					width: 100%;
+					height: auto;
+					vertical-align: top;
+					border-radius: 100%;
+				}
+				.status {
+					position: absolute;
+					bottom: -1px;
+					right: -1px;
+					width: 15px;
+					height: 15px;
+					border: 2px solid #fafafa;
+					border-radius: 100%;
+					@include hide-text;
+					&.online {
+						background: #51ca31;
+					}
+					&.offline {
+						background: $gray-500;
+					}
+				}
+			}
+			.contact-info {
+				flex-grow: 1;
+				.name {
+					display: block;
+					@include font-size(14, 18);
+					font-weight: 600;
+					color: #202020;
+					margin-bottom: 1px;
+					a {
+						color: inherit;
+					}
+				}
+				.last-msg {
+					display: block;
+					@include font-size(12, 16);
+					font-weight: 600;
+					color: #9b9b9b;
+					display: flex;
+					.msg {
+						max-width: 61%;
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+					}
+					.sent-time {
+						margin-left: 3px;
+						&:before {
+							content: '·';
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.app-menu {
+		background: $white;
+		box-shadow: 0 -2px 2px rgba($black, 0.05);
+		>ul {
+			@extend %listreset;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 2px 4px;
+			>li {
+				padding: 0 8px;
+				i {
+					font-size: 20px;
+					line-height: 1;
+					&.icon-home {
+						font-size: 18px;
+					}
+					&.icon-camera {
+						font-size: 36px;
+					}
+					&.icon-phone {
+						font-size: 16px;
+					}
+				}
+				>a {
+					display: block;
+					color: #757575;
+					padding: 5px 10px;
+					&:hover {
+						color: #0084ff;
+					}
+				}
+				&.active {
+					>a {
+						@extend a:hover;
+					}
+				}
+			}
+		}
+	}
+}

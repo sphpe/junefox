@@ -1,0 +1,38 @@
+1) follow / unfollow, posts / followers / following counters
+3) 'no photo/video/timeline/events' description when no content added
+4) photo gallery popup
+5) events list, create event modal, edit event modal, join event modal
+6) search
+7) online models list
+8) live event page - chat, tips, etc
+9) following/followers pages
+10) account/settings page
+11) cash in / cash out
+12) terms / privacy policy / other static pages
+13) password recovery, registration confirmation email
+14) mobile
+15) image/video hosting
+16) video streaming server
+
+
+
+
+
+
+
+
+
+
+1) tips ui: how user make tips, how model see it
+2) user/model balance in/out ui
+3) when event starts, how regular event page transform to event page with chat and tips
+4) timeline page - what is 'stories' and all that right column, add description to photo/video, date, design for user comments
+5) list of models that you follow, list of followers
+6) join event modal (buying)
+7) how model see who joined event before it starts
+8) how model see count of event viewers live
+9) how user can write private message to model
+10) footer - about / mobile / terms / privacy / quick links / help / press pages
+11) login header - "encounters", "people nearby"
+12) how model can cancel event so users can see why
+13) notifications dropdown

@@ -1,0 +1,66 @@
+$breakpoints: (
+	'xs-phone': 320px,
+	'phone': 576px,
+	'tablet': 768px,
+	'desktop': 992px,
+	'widescreen': 1540px,
+);
+	// 'widescreen': 1540px
+
+// keywords
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+@import "vendors/swiper.min";
+@import "vendors/dropzone.min";
+@import 'vendors/include-media';
+@import 'vendors/rem';
+@import 'vendors/fonts';
+@import 'vendors/icomoon';
+
+@import "vendors/bootstrap/functions";
+@import "bootstrap-custom";
+@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/mixins";
+
+
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/other-mixins';
+@import 'base/helpers';
+
+@import 'components/fancybox';
+@import 'components/setting-modal';
+
+@import 'components/uploader';
+@import 'components/payment-form';
+@import 'components/models-list';
+
+@import 'layout/common';
+@import 'layout/header';
+@import 'layout/content';
+@import 'layout/chat-page';
+
+@import 'components/slider';
+
+@import 'pages/profile-setting';
+@import 'pages/appearance';
+@import 'pages/chat';
+@import 'pages/contacts';
+@import 'pages/edit-profile';
+@import 'pages/login';
+@import 'pages/discover';
+@import 'pages/timeline';
+@import 'pages/events';
+
+body {
+	min-width: $base-min-width;
+}

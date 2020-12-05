@@ -1,0 +1,120 @@
+
+@function em($target, $context: 10) {
+  @return ($target / $context)+0em;
+}
+
+// sprite image
+@mixin sprite ($width, $height, $horizontal-offset, $vertical-offset) {
+	$image-path: url(~assets/images/sprite.png);
+	background: $image-path no-repeat $horizontal-offset $vertical-offset;
+	width: $width;
+	height: $height;
+}
+
+// Carets
+@mixin caret-up ($width, $height, $color) {
+	border-width: 0 $width $height;
+	border-color: transparent transparent $color;
+	border-style: solid;
+}
+@mixin caret-down ($width, $height, $color) {
+	border-width: $height $width 0;
+	border-color: $color transparent transparent;
+	border-style: solid;
+}
+@mixin caret-right ($width, $height, $color) {
+	border-width: $height 0 $height $width;
+	border-color: transparent transparent transparent $color;
+	border-style: solid;
+}
+@mixin caret-left ($width, $height, $color) {
+	border-width: $height $width $height 0;
+	border-color: transparent $color transparent transparent;
+	border-style: solid;
+}
+
+// Bullet
+
+@mixin bullet ($size, $color) {
+	content: '';
+	width: $size;
+	height: $size;
+	border-radius: 100px;
+	background: $color;
+}
+
+@mixin text-shadow($shadow...) {
+  -webkit-text-shadow: $shadow; // iOS <4.3 & Android <4.1
+          text-shadow: $shadow;
+}
+
+@mixin icomoon-style {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// @mixin animate($prop:all, $time: 0.25s, $method:linear) {
+// 	transition: $prop $time $method;
+// }
+
+// link color
+@mixin link-color($color) {
+	color: $color;
+	&:hover, &:active, &:focus {
+		color: darken($color, 15%);
+		text-decoration: none;
+	}
+}
+
+// font size
+@mixin font-size($font-size, $line-height) {
+  font-size: $font-size*1px;
+  line-height: $line-height/$font-size;
+}
+
+//font-face
+@mixin font-face($font-family, $font-name, $weight:normal, $style:normal, $code:'') {
+	$fixcode: '';
+	@if ($code != '') {
+		$fixcode: '?' + $code;
+	}
+	@else{
+		$fixcode: '';
+	}
+	@font-face {
+		font: {
+			family: $font-family;
+			style: $style;
+			weight: $weight;
+		}
+    src:url('~assets/fonts/' + $font-name + '.eot' + $fixcode);
+		src:url('~assets/fonts/' + $font-name + '.eot' + $fixcode) format('embedded-opentype'),
+        url('~assets/fonts/' + $font-name + '.svg' + $fixcode) format('svg'),
+        url('~assets/fonts/' + $font-name + '.woff2' + $fixcode) format('woff2'),
+    		url('~assets/fonts/' + $font-name + '.woff' + $fixcode) format('woff'),
+    		url('~assets/fonts/' + $font-name + '.ttf' + $fixcode) format('truetype');
+	}
+}
+
+@mixin vw-calc($element, $font-size, $res) {
+  #{$element}: (($font-size/$res)*100vw);
+}
+@mixin vh-calc($element, $font-size, $res) {
+  #{$element}: (($font-size/$res)*100vh);
+}
+
+@mixin fa-style {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,210 @@
+.events-section {
+	padding: 40px 0 0;
+	h2 {
+		margin-bottom: 25px;
+		@include font-size(18, 22);
+		overflow: hidden;
+		@include media ('>=tablet') {
+			@include font-size(22, 26);
+		}
+		@include media ('>=desktop') {
+			@include font-size(28, 32);
+		}
+		span {
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			padding: 5px 10px;
+			@include media ('>=phone') {
+				padding: 5px 20px;
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				top: 5px;
+				right: 100%;
+				bottom: 0;
+				margin: auto;
+				height: 2px;
+				// background: $gray-400;
+				@include gradient-x(rgba($gray-700, 0), rgba($gray-700, 0.4), 5%, 100%)
+				width: 80px;
+				@include media ('>=phone') {
+					width: 150px;
+				}
+				@include media ('>=tablet') {
+					width: 200px;
+				}
+				@include media ('>=desktop') {
+					width: 300px;
+				}
+			}
+			&:after {
+				@extend span:before;
+				right: auto;
+				left: 100%;
+				@include gradient-x(rgba($gray-700, 0.4), rgba($gray-700, 0), 0%, 95%)
+			}
+		}
+	}
+	h3 {
+		@include font-size(20, 24);
+	}
+	.events-list {
+		@extend %listreset;
+		display: flex;
+		flex-wrap: wrap;
+		// margin: 0 -30px;
+		@include media ('>=tablet') {
+			margin: 0 -20px;
+		}
+		@include media ('>=desktop') {
+			margin: 0 -30px;
+		}
+		li {
+			padding: 15px 0;
+			width: 100%;
+			flex-grow: 0;
+			flex-shrink: 0;
+			@include media ('>=tablet') {
+				width: 50%;
+				padding: 15px 20px;
+				display: flex;
+			}
+			@include media ('>=desktop') {
+				// width: 33.33%;
+				padding: 20px 30px;
+			}
+		}
+		.event-box {
+			position: relative;
+			box-shadow: 0 0 4px -2px rgba($gray-800, 0.5);
+			@include media ('>=tablet') {
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+			}
+			.edit-event {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: rgba($gray-900, 0.7);
+				color: $white;
+				padding: 1px 5px 3px;
+				@include font-size(14, 18);
+				letter-spacing: 1px;
+				opacity: 0.5;
+				@include animate(background opacity);
+				z-index: 1;
+				&:hover {
+					background: $gray-900;
+				}
+			}
+			&:hover {
+				.edit-event {
+					opacity: 1;
+				}
+			}
+		}
+		.preview {
+			display: flex;
+			align-items: flex-start;
+			.image-holder {
+				width: 50%;
+				height: 196px;
+				position: relative;
+				overflow: hidden;
+				&+.image-holder {
+					margin-left: 10px;
+				}
+				.bg-stretch {
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					right: 0;
+				}
+			}
+			iframe {
+				width: 100%;
+				height: 196px;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				vertical-align: top;
+			}
+		}
+		.description {
+			padding: 8px 12px 12px;
+			color: $gray-700;
+			@include media ('<phone') {
+				padding-bottom: 5px;
+			}
+			@include media ('>=tablet') {
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+			}
+			.row {
+				margin-left: -14px;
+				margin-left: -14px;
+			}
+			.event-date {
+				display: flex;
+				@include font-size(16, 20);
+				margin-bottom: 10px;
+				.time {
+					font-size: 0.88em;
+					line-height: 1.43;
+					font-weight: 600;
+					margin-left: 8px;
+					color: $blue;
+					// text-decoration: underline;
+				}
+			}
+			p {
+				margin-bottom: 15px;
+				@include media ('>=tablet') {
+					flex-grow: 1;
+				}
+			}
+			.btn {
+				@include font-size(16, 20);
+				// font-weight: normal;
+				@include media ('<phone') {
+					width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.form-group {
+			position: relative;
+			.form-control {
+				height: 30px;
+				padding-bottom: 0.4rem;
+				@include font-size(14, 18);
+				color: $gray-800;
+				&:focus {
+					border-color: lighten($blue, 20%);
+				}
+			}
+			.btn-copy {
+				position: absolute;
+				top: 4px;
+				right: 3px;
+				background: none;
+				border: none;
+				padding: 0;
+				cursor: pointer;
+				font-size: 20px;
+				line-height: 1;
+				color: $gray-500;
+				@include animate(color);
+				&:hover {
+					color: $gray-600;
+				}
+			}
+		}
+	}
+}
